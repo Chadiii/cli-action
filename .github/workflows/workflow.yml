@@ -14,3 +14,9 @@ jobs:
 
       - name: Run version
         run: flagship version
+
+      - name: Configure CLI
+        run: flagship configure --client-id ${{ secrets.CLIENT_ID }} --client-secret ${{ secrets.CLIENT_SECRET }} --account-id c0n48jn5thv01k0ijmng --account-environment-id c0n48jn5thv01k0ijmo0
+
+      - name: Create Project
+        run: flagship project create -n "alive actions"
