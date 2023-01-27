@@ -1,0 +1,16 @@
+name: Flagship-version
+# This workflow is triggered on pushes to the repository.
+on:
+  push:
+  workflow_call:
+
+jobs:
+  build:
+    name: Install CLI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install the CLI
+        run: wget -qO- https://raw.githubusercontent.com/flagship-io/flagship/main/install.sh | bash
+
+      - name: Run version
+        run: flagship version
